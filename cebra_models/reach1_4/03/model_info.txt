@@ -1,0 +1,44 @@
+Models for reach1_4
+
+----------------------------------------------------------------
+Data Set #1
+05-10-24
+Probe A, M1
+2024-05-10_18-05-37
+
+--- Neural Data Used ---
+- 10ms bins, time window -1 to 2
+- makes, 300 time bins / reach
+neural_data_path = '../neural_data/reach1_4_10ms_FR_1_2_timeWindow_A.npy'
+
+--- discrete_lables ---
+- (60000,2)
+- (60000,0) = Trial_ID, Only used 0.0 for all
+- (60000,1) = SF, used 0.0=Fail for 1.0=Success
+Path discrete_lables: 'discrete_lables/reach1_4_trial_ID_SF_1_2_10ms_SF_2024-05-10_18-05-37.npy'
+
+--- Decoding Models----
+Paths to Decoding Models (trained with above discrete_labels)
+('decoding_models/cebra_trialID_SucessFailure_model_2500_3_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt',
+ 'decoding_models/cebra_trialID_model_2500_3_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt',
+ 'decoding_models/cebra_SucessFailure_model_2500_3_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt')
+
+--- Hybrid Models ---
+reach1_4 2500 3 reach1_4 A 2024-05-10_18-05-37
+('decoding_models/cebra_trialID_hybrid_model_2500_3_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt',
+ 'decoding_models/cebra_SF_hybrid_model_2500_3_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt',
+ 'decoding_models/cebra_SF_ID_hybrid_model_2500_3_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt')
+
+--- Time Model ---
+reach1_4 2500 3 reach1_4 A 
+'decoding_models/cebra_TimeOnly_model_2500_3_reach1_4_A_.pt'
+
+--- Shuffled Models ---
+('decoding_models/cebra_trialID_SucessFailure_shuffled_model_1000_32_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt',
+ 'decoding_models/cebra_trialID_shuffled_model_1000_32_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt',
+ 'decoding_models/cebra_SucessFailure_shuffled_model_1000_32_reach1_4_A_AllSameID_2024-05-10_18-05-37.pt')
+
+Outcome: Seems Bad All Around
+Prediction on why it is bad: Output Dimension of 3 is too small!
+-------------------------------------------------------
+
